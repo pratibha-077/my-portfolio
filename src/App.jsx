@@ -1,7 +1,35 @@
-
+import emailjs from "@emailjs/browser";
+import { useState } from "react";
 import "./App.css";
 
 function App() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: ""
+  });
+const handleSubmit = (e) => {
+  e.preventDefault();
+
+  emailjs.send(
+    "service_2g8oln9",
+    "template_aeqm0hw",
+    {
+      name: formData.name,
+      email: formData.email,
+      message: formData.message,
+    },
+    "KJvHcm1i_bGaSJxEg"
+  )
+  .then(() => {
+    alert("Message sent successfully!");
+    setFormData({ name: "", email: "", message: "" });
+  })
+  .catch((error) => {
+    console.log(error);
+    alert("Message could not be sent. Please try again.");
+  });
+};
   return (
     <div className="portfolio">
 
@@ -238,20 +266,45 @@ function App() {
 
       {/* Contact Section */}
       <section className="contact" id="contact">
-        <p className="intro">LET'S WORK TOGETHER</p>
-        <h2>Have a Project in Mind?</h2>
-        <p>Let's discuss your website or application idea.</p>
+  <p className="intro">LET'S WORK TOGETHER</p>
+  <h2>Have a Project in Mind?</h2>
+  <p>Let's discuss your website or application idea.</p>
 
-        <a
-  href="https://mail.google.com/mail/?view=cm&fs=1&to=reyaachauhan@gmail.com"
-  target="_blank"
-  rel="noreferrer"
-  className="primary-btn"
->
-  Contact Me ↗
-</a>
-      </section>
+  <form className="contact-form" onSubmit={handleSubmit}>
+    <input
+      type="text"
+      placeholder="Your Name"
+      value={formData.name}
+      onChange={(e) =>
+        setFormData({ ...formData, name: e.target.value })
+      }
+      required
+    />
 
+    <input
+      type="email"
+      placeholder="Your Email"
+      value={formData.email}
+      onChange={(e) =>
+        setFormData({ ...formData, email: e.target.value })
+      }
+      required
+    />
+
+    <textarea
+      placeholder="Your Message"
+      value={formData.message}
+      onChange={(e) =>
+        setFormData({ ...formData, message: e.target.value })
+      }
+      required
+    />
+
+    <button type="submit" className="primary-btn">
+      Send Message
+    </button>
+  </form>
+</section>
     </div>
   );
 }

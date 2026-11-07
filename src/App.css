@@ -709,3 +709,54 @@ body {
 .hero .hero-content h2 {
   color: #ffffff !important;
 }
+.contact-form {
+  max-width: 560px;
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 17px 20px;
+  border: 1px solid rgba(189, 120, 255, 0.35);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.045);
+  color: #fff;
+  font-size: 15px;
+  font-family: inherit;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #bd78ff;
+  box-shadow: 0 0 18px rgba(189, 120, 255, 0.2);
+  background: rgba(189, 120, 255, 0.06);
+}
+
+.contact-form textarea {
+  min-height: 160px;
+  resize: vertical;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #aaa;
+}
+
+.contact-form button {
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  align-self: flex-start;
+  transition: 0.3s ease;
+}
+
+.contact-form button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 22px rgba(189, 120, 255, 0.35);
+}
