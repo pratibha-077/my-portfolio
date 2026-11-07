@@ -168,7 +168,7 @@ function App() {
   <h2>Featured Projects</h2>
 
   <div className="project-card">
-    
+
 {/* Project Visual */}
 <div className="project-preview">
   <img
