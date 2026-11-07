@@ -243,7 +243,9 @@ function App() {
         <p>Let's discuss your website or application idea.</p>
 
         <a
-  href="mailto:reyaachauhan@gmail.com"
+  href="https://mail.google.com/mail/?view=cm&fs=1&to=reyaachauhan@gmail.com"
+  target="_blank"
+  rel="noreferrer"
   className="primary-btn"
 >
   Contact Me ↗
