@@ -706,3 +706,6 @@ body {
 .hero h2 {
   color: #ffffff;
 }
+.hero .hero-content h2 {
+  color: #ffffff !important;
+}
